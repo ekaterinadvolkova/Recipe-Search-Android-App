@@ -1,4 +1,4 @@
-<h1> Easy-to-Cook-App</h1>
+<h1> Easy-to-Cook-App Documentation</h1>
 
 [Meeting Minutes for the work done](https://docs.google.com/document/d/1Kxskl1WnvV7__3It5DenZQxB5Y_CyiSDtTRKkOuzEoM/edit?usp=sharing) <br>
 [Pitching](https://docs.google.com/document/d/1nElSDb7DELMLidJ3l86J7CW4nZvRH6JOu1SmGmCKHDI/edit#heading=h.v5am9el3iep)<br>
