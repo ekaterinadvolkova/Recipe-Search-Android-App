@@ -5,4 +5,5 @@
 [UML Diagram](https://metropoliafi-my.sharepoint.com/:u:/g/personal/ekaterv_metropolia_fi/EeX-b6GGpZ9Htg6OaA7v3sUBj37wExHRu7VSduZYQ3vr-g?e=7fzYwK)<br>
 [ TermsOfServices](https://docs.google.com/document/d/18EflAu6L4aS-XvJ6Qq2p4k9B2svD4q88aDm6NoslMgM/edit?usp=sharing)<br>
 [ PrivacyPolicy ](https://docs.google.com/document/d/1Jj146nZmqFba6-JERGIUAtL72BrWzG_BB0BUA9EiImU/edit?usp=sharing)<br>
-[IDs list](https://docs.google.com/spreadsheets/d/1xssecXn3N6ulnYA4CkKeV6QC_BOsWSTGW73EWSZASdA/edit?usp=sharing)
+[IDs list](https://docs.google.com/spreadsheets/d/1xssecXn3N6ulnYA4CkKeV6QC_BOsWSTGW73EWSZASdA/edit?usp=sharing)<br>
+[Pictures](https://metropoliafi-my.sharepoint.com/:f:/g/personal/ekaterv_metropolia_fi/EqwEkBcpzp5HuzKc-HpcqIkBjhfcJLvnkLJiDwEB4WPJqQ?e=sJtAoz)
