@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainmenu"
+    android:background="@drawable/main_menu"
     tools:context=".Activity_userProfile">
 
     <Button
         android:id="@+id/btnLogOut"
-        android:layout_width="85dp"
-        android:layout_height="38dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/btn_logOut"
         android:textAlignment="center"
-        android:textSize="8dp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
