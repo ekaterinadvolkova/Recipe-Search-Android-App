@@ -12,4 +12,5 @@
     <string name="Ingredient">Ingredient</string>
     <string name="Time">TIme</string>
     <string name="Calories">Calories</string>
+    <string name="profile_pic">Profile pic</string>
 </resources>
