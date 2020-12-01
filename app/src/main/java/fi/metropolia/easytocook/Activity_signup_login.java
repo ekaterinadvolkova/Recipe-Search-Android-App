@@ -21,5 +21,14 @@ public class Activity_signup_login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //add intent to direct to create account page
+        findViewById(R.id.btnSignUp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Activity_create_account.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -3,6 +3,7 @@
 
     <string name="logIn_email">Email </string>
     <string name="logIn">Login </string>
+    <string name="verify_password">Verify Password </string>
     <string name="signup">Sign UP</string>
     <string name="welcome">Search and Share the Food You Like</string>
     <string name="logIn_passwords">Password</string>
@@ -17,4 +18,9 @@
     <string name="Calories">Calories</string>
     <string name="profile_pic">Profile pic</string>
     <string name="search_dish">Search Dish</string>
+    <string name="user_name">User Name</string>
+    <string name="create_account">Create Account</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="terms">Agree to Terms and Privacy Policy</string>
 </resources>
