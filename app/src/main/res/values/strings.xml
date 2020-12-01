@@ -23,4 +23,16 @@
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
     <string name="terms">Agree to Terms and Privacy Policy</string>
+    <string name="Less_than_half_hour">Less than half hour</string>
+    <string name="btw_half_and_one_hour">Between half and 1 hour</string>
+    <string name="more_than_a_hour">More than a hour</string>
+    <string name="more_than_two_hours">More than 2 hours</string>
+    <string name="less_than_500_kcal">Less than 500 Kcal</string>
+    <string name="less_than_1K_kcal">Less than 1K kcal</string>
+    <string name="btw_1k_and_2k_kcal">Between 1K and 2K kcal</string>
+    <string name="more_than_2K">more than 2K kcal</string>
+    <string name="add">Add</string>
+    <string name="cooking_time">Cooking time</string>
+    <string name="how_to_cook">How to Cook?</string>
+    <string name="save_recipe">Save Recipe</string>
 </resources>

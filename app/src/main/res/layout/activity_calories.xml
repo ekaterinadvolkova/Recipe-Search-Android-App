@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/search"
+    tools:context=".Activity_calories">
+
+    <ImageView
+        android:id="@+id/calorieImage"
+        android:layout_width="97dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="53dp"
+        android:contentDescription="@string/Calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fire" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="257dp"
+        android:layout_height="194dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/calorieImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calorieImage">
+
+        <RadioButton
+            android:id="@+id/lessThan500Kcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/less_than_500_kcal"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/betwHalfTo1kKcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/less_than_1K_kcal"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/lessThan2kKcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btw_1k_and_2k_kcal"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/moreThan2k"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/more_than_2K"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/listViewCalories"
+        android:layout_width="0dp"
+        android:layout_height="389dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

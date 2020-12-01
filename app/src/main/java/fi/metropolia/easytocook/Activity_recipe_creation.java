@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Activity_laterOn extends AppCompatActivity {
+public class Activity_recipe_creation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_later);
-
-
+        setContentView(R.layout.activity_recipe_creation);
     }
 }

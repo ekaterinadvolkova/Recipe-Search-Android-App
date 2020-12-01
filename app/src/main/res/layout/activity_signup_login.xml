@@ -127,8 +127,8 @@
 
     <Button
         android:id="@+id/btnDishSearch"
-        android:layout_width="191dp"
-        android:layout_height="101dp"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
         android:text="@string/search_dish"
         app:layout_constraintBottom_toTopOf="@+id/btnIngredient"
         app:layout_constraintEnd_toEndOf="parent"
