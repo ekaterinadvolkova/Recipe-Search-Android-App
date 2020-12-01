@@ -4,18 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/main_menu"
     android:theme="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/material_on_primary_emphasis_medium"
-        android:text="@string/next"
+    <TextView
+        android:id="@+id/textWelcome"
+        android:layout_width="333dp"
+        android:layout_height="97dp"
+        android:fontFamily="@font/dancing_script"
+        android:text="@string/welcome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFF00"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <ImageButton
+        android:id="@+id/btnWelcome"
+        android:layout_width="79dp"
+        android:layout_height="56dp"
+        android:background="#020202"
+        android:contentDescription="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textWelcome"
+        app:layout_constraintVertical_bias="0.221"
+        app:srcCompat="@android:drawable/ic_media_ff" />
 </androidx.constraintlayout.widget.ConstraintLayout>
