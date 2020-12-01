@@ -39,4 +39,11 @@
     <string name="clock_image">Clock Image</string>
     <string name="image_ingredient">ingredient image</string>
     <string name="image_Calories">image calories</string>
+    <string name="name_of_receipe">Name of Receipe</string>
+    <string name="receipe_detail_cook_time">Cook Time</string>
+    <string name="text_view_Caloire">Receipe Detail Calories</string>
+    <string name="receipe_detail_instruction">Receipe detail how to cook detail</string>
+    <string name="receipe_detail">Receipe Detail</string>
+    <string name="receipe_detail_cooking_time">Cooking Time (h):</string>
+    <string name="receipe_detail_calories">Calories (Kcal):</string>
 </resources>
