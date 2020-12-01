@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyToCook">
-        <activity android:name=".Activity_recipe_creation"></activity>
+        <activity android:name=".Activity_search_by_dish"></activity>
+        <activity android:name=".Activity_recipe_creation" />
         <activity android:name=".Activity_calories" />
         <activity android:name=".Activity_create_account" />
         <activity android:name=".Activity_signup_login" />
