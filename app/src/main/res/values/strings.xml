@@ -36,4 +36,7 @@
     <string name="how_to_cook">How to Cook?</string>
     <string name="save_recipe">Save Recipe</string>
     <string name="type_dish">Search Dish</string>
+    <string name="clock_image">Clock Image</string>
+    <string name="image_ingredient">ingredient image</string>
+    <string name="image_Calories">image calories</string>
 </resources>

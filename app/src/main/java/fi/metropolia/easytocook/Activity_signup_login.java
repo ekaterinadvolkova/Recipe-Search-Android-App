@@ -23,6 +23,9 @@ public class Activity_signup_login extends AppCompatActivity {
             }else if (v == findViewById(R.id.btnCalories)){
                 Intent intentCalories = new Intent (getApplicationContext(), Activity_calories.class);
                 startActivity(intentCalories);
+            }else if (v == findViewById(R.id.btnDishSearch)){
+                Intent intentDishSearch = new Intent (getApplicationContext(), Activity_search_by_dish.class);
+                startActivity(intentDishSearch);
             }
         }
     };
@@ -42,6 +45,10 @@ public class Activity_signup_login extends AppCompatActivity {
 
         //add intent to direct to calories page
         findViewById(R.id.btnCalories).setOnClickListener(myClickListener);
+
+        //add intent to direct to dish search page
+        findViewById(R.id.btnDishSearch).setOnClickListener(myClickListener);
+
 
     }
 }

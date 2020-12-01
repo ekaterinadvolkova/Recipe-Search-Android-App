@@ -4,96 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/recipe_background"
+    android:background="@drawable/search"
     tools:context=".Activity_search_by_dish">
 
 
     <Button
         android:id="@+id/btnIngredients"
-        android:layout_width="133dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/ic_launcher_background"
         android:text="@string/Ingredient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
+        app:layout_constraintBottom_toTopOf="@+id/btnTime"
+        app:layout_constraintEnd_toEndOf="@+id/btnTime"
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="@+id/btnTime" />
 
     <Button
         android:id="@+id/btnTime"
-        android:layout_width="120dp"
+        android:layout_width="135dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/ic_launcher_background"
         android:text="@string/Time"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngredient"
-        app:layout_constraintVertical_bias="0.27" />
+        app:layout_constraintBottom_toTopOf="@+id/btnCalories"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/btncalories"
-        android:layout_width="120dp"
+        android:id="@+id/btnCalories"
+        android:layout_width="135dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/ic_launcher_background"
         android:text="@string/Calories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTime" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintEnd_toEndOf="@+id/btnTime"
+        app:layout_constraintStart_toStartOf="@+id/btnTime" />
 
     <SearchView
-        android:id="@+id/searchView2"
+        android:id="@+id/searchOnDish"
         android:layout_width="320dp"
         android:layout_height="42dp"
-        android:layout_marginTop="52dp"
         android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnIngredients"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toStartOf="@+id/btnTime"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.118"
+        android:id="@+id/imagClock"
+        android:layout_width="60dp"
+        android:layout_height="52dp"
+        android:contentDescription="@string/clock_image"
+        app:layout_constraintBottom_toTopOf="@+id/imagCalories"
+        app:layout_constraintEnd_toEndOf="@+id/imagCalories"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/imagCalories"
+        app:layout_constraintTop_toBottomOf="@+id/imagIngredt"
         app:srcCompat="@drawable/clock" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
+        android:id="@+id/imagCalories"
+        android:layout_width="62dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="76dp"
+        android:contentDescription="@string/image_Calories"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/btnCalories"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/fire" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTime"
-        app:layout_constraintEnd_toStartOf="@+id/btnIngredient"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2"
+        android:id="@+id/imagIngredt"
+        android:layout_width="62dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="31dp"
+        android:contentDescription="@string/image_ingredient"
+        app:layout_constraintEnd_toEndOf="@+id/imagClock"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="@+id/imagClock"
+        app:layout_constraintTop_toBottomOf="@+id/searchOnDish"
         app:srcCompat="@drawable/pepper" />
-
-    <ListView
-        android:layout_width="414dp"
-        android:layout_height="422dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTime"
-        app:layout_constraintVertical_bias="0.993" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
@@ -110,6 +104,15 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp"
         app:layout_constraintGuide_percent="0.5" />
+
+    <ListView
+        android:id="@+id/listViewOnDishSearch"
+        android:layout_width="386dp"
+        android:layout_height="321dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
