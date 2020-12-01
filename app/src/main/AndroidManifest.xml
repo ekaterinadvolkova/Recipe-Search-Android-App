@@ -9,18 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyToCook">
-        <activity android:name=".Activity_search_by_ingredients"></activity>
+        <activity android:name=".Activity_search_by_ingredients"
+            android:parentActivityName=".Activity_userProfile"></activity>
         <activity android:name=".Activity_recipe_detail" />
-        <activity android:name=".Activity_search_by_dish" />
-        <activity android:name=".Activity_recipe_creation" />
-        <activity android:name=".Activity_calories" />
-        <activity android:name=".Activity_create_account" />
+        <activity android:name=".Activity_search_by_dish"
+            android:parentActivityName=".Activity_userProfile"/>
+        <activity android:name=".Activity_recipe_creation"
+            android:parentActivityName=".Activity_userProfile"/>
+        <activity android:name=".Activity_calories"
+            android:parentActivityName=".Activity_userProfile"/>
+        <activity android:name=".Activity_create_account"
+            android:parentActivityName=".Activity_signup_login"/>
         <activity android:name=".Activity_signup_login" />
-        <activity android:name=".Activity_cookingTime" />
+        <activity android:name=".Activity_cookingTime"
+            android:parentActivityName=".Activity_userProfile"/>
         <activity android:name=".Activity_userProfile" />
         <activity
             android:name=".Activity_logIn"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activity_signup_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

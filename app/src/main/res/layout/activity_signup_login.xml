@@ -14,14 +14,15 @@
         android:layout_marginTop="4dp"
         android:text="@string/logIn"
         android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_light"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
+        app:layout_constraintVertical_bias="0.404" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -72,10 +73,10 @@
         android:textColor="@android:color/holo_orange_light"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <Button
         android:id="@+id/btnIngredient"
@@ -130,6 +131,7 @@
         android:layout_width="160dp"
         android:layout_height="55dp"
         android:text="@string/search_dish"
+        android:textColor="@android:color/holo_orange_light"
         app:layout_constraintBottom_toTopOf="@+id/btnIngredient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
