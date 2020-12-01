@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyToCook">
         <activity android:name=".Activity_signup_login"></activity>
-        <activity android:name=".Activity_welcome" />
+        <activity android:name=".Activity_laterOn" />
         <activity android:name=".Activity_userProfile" />
         <activity
             android:name=".Activity_logIn"
