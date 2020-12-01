@@ -17,6 +17,9 @@ public class Activity_search_by_dish extends AppCompatActivity {
             } else if (v == findViewById(R.id.btnCalories)) {
                 Intent intentCalories = new Intent(getApplicationContext(), Activity_calories.class);
                 startActivity(intentCalories);
+            } else if (v == findViewById(R.id.btnIngredients)){
+                Intent intentIngredients = new Intent(getApplicationContext(), Activity_search_by_ingredients.class);
+                startActivity(intentIngredients);
             }
         }
     };
@@ -25,10 +28,11 @@ public class Activity_search_by_dish extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_by_dish);
-
         //add intent to direct to calories page
         findViewById(R.id.btnTime).setOnClickListener(myClickListener);
+        //go to calries filter page
         findViewById(R.id.btnCalories).setOnClickListener(myClickListener);
-
+        //go to ingredients filter page
+        findViewById(R.id.btnIngredients).setOnClickListener(myClickListener);
     }
 }

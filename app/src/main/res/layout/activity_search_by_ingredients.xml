@@ -4,6 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/recipe_background"
     tools:context=".Activity_search_by_ingredients">
+
+    <SearchView
+        android:id="@+id/searchfieldIngredient"
+        android:layout_width="408dp"
+        android:layout_height="64dp"
+
+        android:layout_marginBottom="80dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ListView
+        android:id="@+id/listViewIngredient"
+        android:layout_width="419dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchfieldIngredient" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

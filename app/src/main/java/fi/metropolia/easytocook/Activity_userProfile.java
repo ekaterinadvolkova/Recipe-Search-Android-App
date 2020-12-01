@@ -23,6 +23,12 @@ public class Activity_userProfile extends AppCompatActivity {
             } else if (v == findViewById(R.id.btnCalories)) {
                 Intent intentCalories = new Intent(getApplicationContext(), Activity_calories.class);
                 startActivity(intentCalories);
+            } else if (v == findViewById(R.id.btnIngredient)){
+                Intent intentIngredients = new Intent(getApplicationContext(), Activity_search_by_ingredients.class);
+                startActivity(intentIngredients);
+            } else if (v == findViewById(R.id.btnCuisine)){
+                Intent intentDish = new Intent(getApplicationContext(), Activity_search_by_dish.class);
+                startActivity(intentDish);
             }
         }
     };
@@ -31,14 +37,17 @@ public class Activity_userProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
+        //leads back to the main page
         findViewById(R.id.btnLogOut).setOnClickListener(myClickListener);
-
+        //leads to filter by calories
         findViewById(R.id.btnCalories).setOnClickListener(myClickListener);
-
+        //leads to the creation of the recipe
         findViewById(R.id.btnRecipe).setOnClickListener(myClickListener);
-
+        // leads to filtered search based on time
         findViewById(R.id.btnTime).setOnClickListener(myClickListener);
-
+        //leads to filtered search based on ingredients
+        findViewById(R.id.btnIngredient).setOnClickListener(myClickListener);
+        //leads to filtered normal rearch by dish name
+        findViewById(R.id.btnCuisine).setOnClickListener(myClickListener);
     }
 }
