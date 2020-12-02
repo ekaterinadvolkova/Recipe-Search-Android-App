@@ -14,23 +14,18 @@ public class Activity_signup_login extends AppCompatActivity {
             if(v == findViewById(R.id.btnLog_In)){
                 Intent intentLogIn = new Intent(getApplicationContext(), Activity_logIn.class);
                 startActivity(intentLogIn);
-
             } else if (v == findViewById(R.id.btnSignUp)){
                 Intent intentCreateAccount = new Intent(getApplicationContext(), Activity_create_account.class);
                 startActivity(intentCreateAccount);
-
             }else if (v == findViewById(R.id.btnTime)){
                 Intent intentCookingTime = new Intent(getApplicationContext(), Activity_cookingTime.class);
                 startActivity(intentCookingTime);
-
             }else if (v == findViewById(R.id.btnCalories)){
                 Intent intentCalories = new Intent (getApplicationContext(), Activity_calories.class);
                 startActivity(intentCalories);
-
             }else if (v == findViewById(R.id.btnDishSearch)){
                 Intent intentDishSearch = new Intent (getApplicationContext(), Activity_search_by_dish.class);
                 startActivity(intentDishSearch);
-
             } else if (v == findViewById(R.id.btnIngredient)){
                 Intent intentIngredientSearch = new Intent (getApplicationContext(), Activity_search_by_ingredients.class);
                 startActivity(intentIngredientSearch);
@@ -45,19 +40,14 @@ public class Activity_signup_login extends AppCompatActivity {
 
         //add intent to direct to Login page
         findViewById(R.id.btnLog_In).setOnClickListener(myClickListener);
-
         //add intent to direct to create account page
         findViewById(R.id.btnSignUp).setOnClickListener(myClickListener);
-
         //add intent to direct to cooking time page
         findViewById(R.id.btnTime).setOnClickListener(myClickListener);
-
         //add intent to direct to calories page
         findViewById(R.id.btnCalories).setOnClickListener(myClickListener);
-
         //add intent to direct to dish search page
         findViewById(R.id.btnDishSearch).setOnClickListener(myClickListener);
-
         //add intent to direct to ingredient search page
         findViewById(R.id.btnIngredient).setOnClickListener(myClickListener);
 
