@@ -1,19 +1,17 @@
 package fi.metropolia.easytocook;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,7 +25,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import fi.metropolia.easytocook.userProfile.User;
@@ -36,13 +33,10 @@ import fi.metropolia.easytocook.userProfile.UserAccount;
 public class Activity_create_account extends AppCompatActivity {
     public static final String TAG = "myApp";
     public static SharedPreferences sharedPreferences;
-
-    private EditText first_name, last_name, EmailAddress, Password, userName, verifypassword;
-    private Button btn_create_account;
+    private EditText first_name, last_name, EmailAddress, Password, userName, verify;
     private FirebaseAuth Authentification;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String userID;
-
 
     //set up UI views
     private void setupUIViews(){
@@ -51,9 +45,7 @@ public class Activity_create_account extends AppCompatActivity {
         EmailAddress = (EditText)findViewById(R.id.EmailAddress);
         Password = (EditText)findViewById(R.id.Password);
         userName = (EditText)findViewById(R.id.username);
-        verifypassword = (EditText)findViewById(R.id.verify_password);
-        CheckBox checkbox = findViewById(R.id.chBTerms);
-
+        verify =(EditText)findViewById(R.id.verify_password);
     }
 
     @Override
@@ -71,14 +63,12 @@ public class Activity_create_account extends AppCompatActivity {
 
         findViewById(R.id.btn_create_account).setOnClickListener(new View.OnClickListener() {
 
-
             // if  data input is validated -> user account & add user data to the database
             @Override
             public void onClick(View v) {
 
-
                 //validate user details
-                if (validate() == true){
+                if (validate()){
                     //direct to the profile page
                     Intent intentUserProfile = new Intent(getApplicationContext(), Activity_userProfile.class);
                     startActivity(intentUserProfile);
@@ -152,17 +142,6 @@ public class Activity_create_account extends AppCompatActivity {
 
     }
 
-    /*private void checkPass() {
-        EditText verifiedPassword = findViewById(R.id.verify_password);
-        EditText password = findViewById(R.id.Password);
-        String passwordInput = password.getText().toString();
-        String verifiedPasswordInput = verifiedPassword.getText().toString();
-
-        if (passwordInput.equals(verifiedPasswordInput)) {
-            findViewById(R.id.verify_password).setText();
-        }
-    }*/
-
     //validation function
     private boolean validate(){
         Boolean result = false;
@@ -173,12 +152,11 @@ public class Activity_create_account extends AppCompatActivity {
         String email = EmailAddress.getText().toString();
         String firstname = first_name.getText().toString();
         String lastname = last_name.getText().toString();
-        String verify = verifypassword.getText().toString();
         CheckBox checkbox = findViewById(R.id.chBTerms);
 
 
         //check if the username is not empty, passowrds match, user conditions are accepted
-        if(name.isEmpty() || password.isEmpty() || email.isEmpty() || firstname.isEmpty() || lastname.isEmpty() ||verify.isEmpty()){
+        if(name.isEmpty() || password.isEmpty() || email.isEmpty() || firstname.isEmpty() || lastname.isEmpty()){
             Toast.makeText(this, "Please, enter all the details", Toast.LENGTH_SHORT).show();
         } else if(!verify.equals(password)){
             Toast.makeText(this, "Please, enter same passwords", Toast.LENGTH_SHORT).show();
