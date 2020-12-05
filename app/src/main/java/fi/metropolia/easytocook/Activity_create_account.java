@@ -16,11 +16,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import fi.metropolia.easytocook.userProfile.User;
 import fi.metropolia.easytocook.userProfile.UserAccount;
@@ -32,6 +37,8 @@ public class Activity_create_account extends AppCompatActivity {
     private EditText first_name, last_name, EmailAddress, Password, userName, verifypassword;
     private Button btn_create_account;
     private FirebaseAuth Authentification;
+    FirebaseFirestore db;
+    String userID;
 
 
     //set up UI views
@@ -53,8 +60,9 @@ public class Activity_create_account extends AppCompatActivity {
 
         setupUIViews();
 
-        // initialize the FirebaseAuth instance.
+        // initialize the FirebaseAuth, firebasefirestore instance.
         Authentification = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
 
         Log.d(TAG, "on Created");
@@ -85,6 +93,10 @@ public class Activity_create_account extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Log.d(TAG, "createUserWithEmail:success");
                                 Toast.makeText(Activity_create_account.this, "Registration successful", Toast.LENGTH_SHORT).show();
+
+                                //add all user data to the DB
+                                addToDB();
+
                                 //after registration complete direct user to the Activity_login
                                 startActivity(new Intent(Activity_create_account.this, Activity_logIn.class));
                             } else {
@@ -94,12 +106,6 @@ public class Activity_create_account extends AppCompatActivity {
                         }
                     });
                 };
-
-                //read input values
-                //User
-                // User user = new User (fname, ...)
-                //UserAccount singleton
-                //UserAccount.getUserAccountInstance.add(new User())
 
             }
         });
@@ -181,6 +187,32 @@ public class Activity_create_account extends AppCompatActivity {
             result = true;
         }
         return result;
+    }
+
+    //add user data to the database if the registration is successful
+    public void addToDB(){
+        //save UserID
+        Authentification.getCurrentUser().getUid();
+
+        //create database to store User first name, last name, email
+        DocumentReference documentReference = db.collection("Users").document(userID);
+
+        //create the data using hash map
+        Map<String, Object> user = new HashMap<>();
+
+        //insert the data with put method
+        user.put("First name", first_name);
+        user.put("Last name", last_name);
+        user.put("Email", EmailAddress);
+        user.put("Username", userName);
+
+        //put data to the database, add event listener to check if the operation successful
+        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "User profile is created for "+ userID);
+            }
+        });
     }
 }
 
