@@ -31,12 +31,12 @@ import fi.metropolia.easytocook.userProfile.User;
 import fi.metropolia.easytocook.userProfile.UserAccount;
 
 public class Activity_create_account extends AppCompatActivity {
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     public static final String TAG = "myApp";
     public static SharedPreferences sharedPreferences;
-    private EditText first_name, last_name, EmailAddress, Password, userName, verify;
+    public EditText first_name, last_name, EmailAddress, Password, userName, verify;
     private FirebaseAuth Authentification;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String userID;
+    private String userID;
 
     //set up UI views
     private void setupUIViews(){
@@ -76,6 +76,14 @@ public class Activity_create_account extends AppCompatActivity {
                     //upload data to the database
                     String user_Email = EmailAddress.getText().toString().trim();
                     String password = Password.getText().toString().trim();
+                    first_name.getText().toString();
+                    last_name.getText().toString();
+                    EmailAddress.getText().toString();
+                    Password.getText().toString();
+                    userName.getText().toString();
+                    verify.getText().toString();
+
+
 
                     //push to db
                     Authentification.createUserWithEmailAndPassword(user_Email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -96,7 +104,7 @@ public class Activity_create_account extends AppCompatActivity {
                             }
                         }
                     });
-                };
+                }
 
             }
         });
@@ -112,7 +120,6 @@ public class Activity_create_account extends AppCompatActivity {
         EditText email = findViewById(R.id.EmailAddress);
         EditText userName = findViewById(R.id.username);
         EditText password = findViewById(R.id.Password);
-        EditText verifiedPassword = findViewById(R.id.verify_password);
 
         String fNameInput = firstName.getText().toString();
         Log.i(TAG, fNameInput);
@@ -124,8 +131,6 @@ public class Activity_create_account extends AppCompatActivity {
         Log.i(TAG, userNameInput);
         String passwordInput = password.getText().toString();
         Log.i(TAG, passwordInput);
-        String verifiedPasswordInput = verifiedPassword.getText().toString();
-
 
         //checkPass();
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -144,7 +149,7 @@ public class Activity_create_account extends AppCompatActivity {
 
     //validation function
     private boolean validate(){
-        Boolean result = false;
+        boolean result = false;
 
         //declare all the data checked
         String name = userName.getText().toString();
@@ -152,13 +157,14 @@ public class Activity_create_account extends AppCompatActivity {
         String email = EmailAddress.getText().toString();
         String firstname = first_name.getText().toString();
         String lastname = last_name.getText().toString();
+        String verify_pass = verify.getText().toString();
         CheckBox checkbox = findViewById(R.id.chBTerms);
 
 
         //check if the username is not empty, passowrds match, user conditions are accepted
         if(name.isEmpty() || password.isEmpty() || email.isEmpty() || firstname.isEmpty() || lastname.isEmpty()){
             Toast.makeText(this, "Please, enter all the details", Toast.LENGTH_SHORT).show();
-        } else if(!verify.equals(password)){
+        } else if(!verify_pass.equals(password)){
             Toast.makeText(this, "Please, enter same passwords", Toast.LENGTH_SHORT).show();
         } else if(!checkbox.isChecked()){
             Toast.makeText(this, "Please, agree to the Terms and Privacy Policy", Toast.LENGTH_SHORT).show();
@@ -170,21 +176,22 @@ public class Activity_create_account extends AppCompatActivity {
 
     //add user data to the database if the registration is successful
     public void addToDB(){
-        //save UserID
-        Authentification.getCurrentUser().getUid();
+        setupUIViews();
 
-        //create database to store User first name, last name, email
-        DocumentReference documentReference = db.collection("Users").document(userID);
+        /*first_name.getText().toString();
+        last_name.getText().toString();
+        EmailAddress.getText().toString();
+        userName.getText().toString();*/
 
-        //create the data using hash map
+        // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
 
-        //insert the data with put method
-        user.put("First name", first_name);
-        user.put("Last name", last_name);
-        user.put("Email", EmailAddress);
-        user.put("Username", userName);
+        user.put("First name", "first_name");
+        user.put("Last name", "last_name");
+        user.put("Email", "EmailAddress");
+        user.put("Username", "userName");
 
+// Add a new document with a generated ID
         db.collection("users")
                 .add(user)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -200,7 +207,7 @@ public class Activity_create_account extends AppCompatActivity {
                     }
                 });
 
-        // Add a new document with a generated ID
+// Add a new document with a generated ID
         db.collection("users")
                 .add(user)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -213,22 +220,6 @@ public class Activity_create_account extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w(TAG, "Error adding document", e);
-                    }
-                });
-
-        //method to exctract the data
-        db.collection("users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
                     }
                 });
 
