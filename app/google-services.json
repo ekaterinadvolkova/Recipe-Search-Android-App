@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92160686824",
+    "project_id": "easytocooklogin",
+    "storage_bucket": "easytocooklogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92160686824:android:242a211c913f59f9b9a75d",
+        "android_client_info": {
+          "package_name": "fi.metropolia.easytocook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92160686824-sg8khp1cc997dgiiihmpjh3id6k5chf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGa2Rm7nfAF0G_H-6L8_7QuAyWKAm8z04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92160686824-sg8khp1cc997dgiiihmpjh3id6k5chf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
