@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.562"
+        app:layout_constraintVertical_bias="0.625"
         app:srcCompat="@drawable/userimage" />
 
     <Button
@@ -36,8 +36,8 @@
 
     <EditText
         android:id="@+id/ingInput"
-        android:layout_width="315dp"
-        android:layout_height="61dp"
+        android:layout_width="294dp"
+        android:layout_height="68dp"
         android:autofillHints=""
         android:background="@android:color/darker_gray"
         android:ems="10"
@@ -49,8 +49,11 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0.747"
+        android:paddingLeft="10sp"/>
 
     <EditText
         android:id="@+id/ckTimeInput"
@@ -70,7 +73,8 @@
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="@+id/ingInput"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:paddingLeft="10sp"/>
 
     <EditText
         android:id="@+id/calorieInput"
@@ -87,26 +91,49 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="@+id/ckTimeInput"
         app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="@+id/ckTimeInput" />
+        app:layout_constraintStart_toStartOf="@+id/ckTimeInput"
+        android:paddingLeft="10sp"/>
 
     <EditText
         android:id="@+id/howToCookInput"
-        android:layout_width="386dp"
-        android:layout_height="169dp"
+        android:layout_width="365dp"
+        android:layout_height="171dp"
         android:layout_marginBottom="12dp"
         android:autofillHints=""
         android:background="@android:color/darker_gray"
         android:ems="10"
+        android:paddingLeft="10sp"
         android:hint="@string/how_to_cook"
         android:inputType="textPersonName"
         android:textColorHint="@color/black"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ingInput"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="@+id/calorieInput"
         app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/dishName"
+        android:layout_width="273dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="12dp"
+        android:autofillHints=""
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="@string/DishName"
+        android:inputType="textPersonName"
+        android:paddingLeft="10sp"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ingInput"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
+        app:layout_constraintVertical_bias="0.056" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

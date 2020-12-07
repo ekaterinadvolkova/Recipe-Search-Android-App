@@ -77,19 +77,17 @@ public class Activity_logIn extends AppCompatActivity {
 
     }
 
-    private void validate(String userName, String userPassword) {
+    private void validate(String Name, String Password) {
 
-        progressDialog.setMessage("You can subscribe to my channel until you are verified!");
-        progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(Name, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(Activity_logIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    Intent intentProfile = new Intent(getApplicationContext(), Activity_userProfile.class);
-                    startActivity(intentProfile);
+                    Intent goToUserProfile = new Intent(getApplicationContext(), Activity_userProfile.class);
+                    startActivity(goToUserProfile);
 
                 }else{
                     Toast.makeText(Activity_logIn.this, "Login Failed", Toast.LENGTH_SHORT).show();

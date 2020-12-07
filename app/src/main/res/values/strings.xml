@@ -47,4 +47,6 @@
     <string name="receipe_detail_cooking_time">Cooking Time (h):</string>
     <string name="receipe_detail_calories">Calories (Kcal):</string>
     <string name="error">error</string>
+    <string name="DishName">Dish Name</string>
+    <string name="nextt">next</string>
 </resources>
