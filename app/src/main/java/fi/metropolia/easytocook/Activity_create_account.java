@@ -69,9 +69,6 @@ public class Activity_create_account extends AppCompatActivity {
 
                 //validate user details
                 if (validate()){
-                    //direct to the profile page
-                    Intent intentUserProfile = new Intent(getApplicationContext(), Activity_userProfile.class);
-                    startActivity(intentUserProfile);
 
                     //upload data to the database
                     String user_Email = EmailAddress.getText().toString().trim();
@@ -82,8 +79,6 @@ public class Activity_create_account extends AppCompatActivity {
                     Password.getText().toString();
                     userName.getText().toString();
                     verify.getText().toString();
-
-
 
                     //push to db
                     Authentification.createUserWithEmailAndPassword(user_Email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -177,11 +172,6 @@ public class Activity_create_account extends AppCompatActivity {
     //add user data to the database if the registration is successful
     public void addToDB(){
         setupUIViews();
-
-        /*first_name.getText().toString();
-        last_name.getText().toString();
-        EmailAddress.getText().toString();
-        userName.getText().toString();*/
 
         // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
