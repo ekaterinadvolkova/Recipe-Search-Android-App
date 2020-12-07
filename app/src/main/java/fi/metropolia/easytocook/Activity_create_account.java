@@ -172,16 +172,16 @@ public class Activity_create_account extends AppCompatActivity {
     //add user data to the database if the registration is successful
     public void addToDB(){
         first_name = (EditText)findViewById(R.id.first_name);
-        Object fname = first_name;
+        Object fname = first_name.getText().toString();
 
         last_name = (EditText)findViewById(R.id.last_name);
-        Object lname = last_name;
+        Object lname = last_name.getText().toString();
 
         EmailAddress = (EditText)findViewById(R.id.EmailAddress);
-        Object eadress = EmailAddress;
+        Object eadress = EmailAddress.getText().toString();
 
         userName = (EditText)findViewById(R.id.username);
-        Object uname = EmailAddress;
+        Object uname = EmailAddress.getText().toString();
 
         // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
