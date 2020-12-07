@@ -23,37 +23,25 @@
         app:layout_constraintVertical_bias="0.625"
         app:srcCompat="@drawable/userimage" />
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="68dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="12dp"
-        android:text="@string/add"
-        android:textSize="12sp"
-        app:backgroundTint="@color/teal_700"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ingInput"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <EditText
         android:id="@+id/ingInput"
         android:layout_width="294dp"
         android:layout_height="68dp"
+        android:layout_marginStart="28dp"
         android:autofillHints=""
         android:background="@android:color/darker_gray"
         android:ems="10"
         android:hint="@string/Ingredient"
         android:inputType="textPersonName"
+        android:paddingLeft="10sp"
         android:singleLine="false"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/black"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
-        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:layout_constraintVertical_bias="0.747"
-        android:paddingLeft="10sp"/>
+        app:layout_constraintVertical_bias="0.756" />
 
     <EditText
         android:id="@+id/ckTimeInput"
@@ -129,8 +117,6 @@
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ingInput"
         app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
         app:layout_constraintVertical_bias="0.056" />

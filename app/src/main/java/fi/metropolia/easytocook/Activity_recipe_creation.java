@@ -53,18 +53,9 @@ public class Activity_recipe_creation extends AppCompatActivity {
         if (validate()) {
             //add the recipe to the DB
             recipeList();
-            /*add ingredients list
-            //ingredientsList();
 
-            //add time list
-            //timeList();
-
-            //add time list
-            //calorieList();
-
-            //add the success listener*/
             //direct the user to the activity recipe_detail
-            startActivity(new Intent(Activity_recipe_creation.this, Activity_recipe_detail.class));
+            startActivity(new Intent(Activity_recipe_creation.this, Activity_search_by_dish.class));
         }
     }
 
@@ -126,38 +117,6 @@ public class Activity_recipe_creation extends AppCompatActivity {
     }
 }
 
-    //add ingredients to database
-    /*public void ingredientsList(){
-
-        // Create a new user with a first and last name
-        Map<String, Object> ingredient = new HashMap<>();
-
-        ingredient.put("Ingredient 1", "tomatoes");
-        ingredient.put("Ingredient 2", "cucumbers");
-        ingredient.put("Ingredient 3", "apples");
-        ingredient.put("Ingredient 4", "beef");
-
-        // Add a new document with a generated ID
-        ingredientsDB.collection("Ingredients")
-                .add(ingredient)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-
-        // Add a new document with a generated ID
-        ingredientsDB.collection("Ingredients")
-                .add(ingredient)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-    }
-}*/
-
-    //add time to database
-    /*public void timeList(){
-    }
-
-     //add calories to database
-    public void calorieList(){
-    }*/
 
 
 

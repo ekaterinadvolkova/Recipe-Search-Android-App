@@ -76,60 +76,13 @@
         app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.881" />
-
-    <Button
-        android:id="@+id/btnIngredient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="160dp"
-        android:text="@string/Ingredient"
-        android:textAlignment="viewStart"
-        android:textColor="@android:color/holo_orange_light"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/btnTime"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btnTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/Time"
-        android:textColor="@android:color/holo_orange_light"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.349"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngredient"
-        app:layout_constraintVertical_bias="0.463" />
-
-    <Button
-        android:id="@+id/btnCalories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/Calories"
-        android:textAlignment="viewStart"
-        android:textColor="@android:color/holo_orange_light"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnDishSearch"
-        android:layout_width="160dp"
+        android:layout_width="166dp"
         android:layout_height="55dp"
+        android:layout_marginTop="96dp"
         android:text="@string/search_dish"
         android:textColor="@android:color/holo_orange_light"
         app:layout_constraintBottom_toTopOf="@+id/btnIngredient"

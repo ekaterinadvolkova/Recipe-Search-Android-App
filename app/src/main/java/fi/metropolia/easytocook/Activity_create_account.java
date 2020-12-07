@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -52,6 +53,7 @@ public class Activity_create_account extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+        Button terms = findViewById(R.id.btnTerms);
 
         setupUIViews();
 
@@ -61,48 +63,10 @@ public class Activity_create_account extends AppCompatActivity {
         Log.d(TAG, "on Created");
         sharedPreferences = getSharedPreferences("myApp_shadPrefer", Context.MODE_PRIVATE);
 
-        findViewById(R.id.btn_create_account).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_create_account).setOnClickListener(myClickListener);
 
-            // if  data input is validated -> user account & add user data to the database
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.btnTerms).setOnClickListener(myClickListener);
 
-                //validate user details
-                if (validate()){
-
-                    //upload data to the database
-                    String user_Email = EmailAddress.getText().toString().trim();
-                    String password = Password.getText().toString().trim();
-                    first_name.getText().toString();
-                    last_name.getText().toString();
-                    EmailAddress.getText().toString();
-                    Password.getText().toString();
-                    userName.getText().toString();
-                    verify.getText().toString();
-
-                    //push to db
-                    Authentification.createUserWithEmailAndPassword(user_Email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                Log.d(TAG, "createUserWithEmail:success");
-                                Toast.makeText(Activity_create_account.this, "Registration successful", Toast.LENGTH_SHORT).show();
-
-                                //add all user data to the DB
-                                addToDB();
-
-                                //after registration complete direct user to the Activity_login
-                                startActivity(new Intent(Activity_create_account.this, Activity_logIn.class));
-                            } else {
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(Activity_create_account.this, "Registration failed", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-
-            }
-        });
     }
 
     @Override
@@ -208,6 +172,54 @@ public class Activity_create_account extends AppCompatActivity {
                 });
 
     }
+
+    private final View.OnClickListener myClickListener = new View.OnClickListener() {
+        // if  data input is validated -> user account & add user data to the database
+        //if the user want to read the data tems, he will be redirected to the terms page
+        @Override
+        public void onClick(View v) {
+
+            if (v == findViewById(R.id.btn_create_account)) {
+                //validate user details
+                if (validate()) {
+
+                    //upload data to the database
+                    String user_Email = EmailAddress.getText().toString().trim();
+                    String password = Password.getText().toString().trim();
+                    first_name.getText().toString();
+                    last_name.getText().toString();
+                    EmailAddress.getText().toString();
+                    Password.getText().toString();
+                    userName.getText().toString();
+                    verify.getText().toString();
+
+                    //push to db
+                    Authentification.createUserWithEmailAndPassword(user_Email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Log.d(TAG, "createUserWithEmail:success");
+                                Toast.makeText(Activity_create_account.this, "Registration successful", Toast.LENGTH_SHORT).show();
+
+                                //add all user data to the DB
+                                addToDB();
+
+                                //after registration complete direct user to the Activity_login
+                                startActivity(new Intent(Activity_create_account.this, Activity_logIn.class));
+                            } else {
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(Activity_create_account.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            } else if (v == findViewById(R.id.btnTerms)) {
+                Intent intentTerns = new Intent(getApplicationContext(), Activity_Terms.class);
+                startActivity(intentTerns);
+            }
+
+        }
+    };
 }
 
 
