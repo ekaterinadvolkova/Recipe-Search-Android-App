@@ -171,31 +171,25 @@ public class Activity_create_account extends AppCompatActivity {
 
     //add user data to the database if the registration is successful
     public void addToDB(){
-        setupUIViews();
+        first_name = (EditText)findViewById(R.id.first_name);
+        Object fname = first_name;
+
+        last_name = (EditText)findViewById(R.id.last_name);
+        Object lname = last_name;
+
+        EmailAddress = (EditText)findViewById(R.id.EmailAddress);
+        Object eadress = EmailAddress;
+
+        userName = (EditText)findViewById(R.id.username);
+        Object uname = EmailAddress;
 
         // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
 
-        user.put("First name", "first_name");
-        user.put("Last name", "last_name");
-        user.put("Email", "EmailAddress");
-        user.put("Username", "userName");
-
-// Add a new document with a generated ID
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
+        user.put("First name", fname);
+        user.put("Last name", lname);
+        user.put("Email", eadress);
+        user.put("Username", uname);
 
 // Add a new document with a generated ID
         db.collection("users")

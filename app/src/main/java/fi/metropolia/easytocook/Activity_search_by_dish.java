@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class Activity_search_by_dish extends AppCompatActivity {
+    FirebaseFirestore retrieveDish = FirebaseFirestore.getInstance();
 
     private final View.OnClickListener myClickListener = new View.OnClickListener() {
         @Override

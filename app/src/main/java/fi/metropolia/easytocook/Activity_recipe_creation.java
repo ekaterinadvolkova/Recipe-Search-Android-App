@@ -7,6 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
@@ -16,18 +23,18 @@ import static fi.metropolia.easytocook.R.id.dishName;
 
 public class Activity_recipe_creation extends AppCompatActivity {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    //FirebaseFirestore db = FirebaseFirestore.getInstance();
     public static final String TAG = "recipe";
     public EditText ingredient, cookTime, calories, recipe, dish;
     FirebaseFirestore recipeDB = FirebaseFirestore.getInstance();
 
     //set up UI views
     private void setupUIViews() {
-        ingredient = findViewById(R.id.ingInput);
-        cookTime = findViewById(R.id.ckTimeInput);
-        calories = findViewById(R.id.calorieInput);
-        recipe = findViewById(R.id.howToCookInput);
-        dish = findViewById(dishName);
+         ingredient = (EditText)findViewById(R.id.ingInput);
+         cookTime = (EditText)findViewById(R.id.ckTimeInput);
+         calories = (EditText)findViewById(R.id.calorieInput);
+         recipe = (EditText)findViewById(R.id.howToCookInput);
+         dish = (EditText)findViewById(dishName);
     }
 
     @Override
@@ -41,6 +48,8 @@ public class Activity_recipe_creation extends AppCompatActivity {
     }
 
     private void onClick(View v) {
+        //setupUIViews();
+
         if (validate()) {
             //add the recipe to the DB
             recipeList();
@@ -62,32 +71,35 @@ public class Activity_recipe_creation extends AppCompatActivity {
     //add recipes to database
     public void recipeList() {
 
-        ingredient = findViewById(R.id.ingInput);
-        cookTime = findViewById(R.id.ckTimeInput);
-        calories = findViewById(R.id.calorieInput);
-        recipe = findViewById(R.id.howToCookInput);
-        dish = findViewById(dishName);
+        Object ingr = ingredient.getText().toString();
+        Object cTime =cookTime.getText().toString();
+        Object cal = calories.getText().toString();
+        Object recip = recipe.getText().toString();
+        Object dishh = dish.getText().toString();
 
         // Create a new user with a first and last name
-        Map<String, Object> recipe = new HashMap<>();
-
-        recipe.put("Dish", "dish");
-        recipe.put("Ingredient", "ingredient");
-        recipe.put("Cooking Time", "cookTime");
-        recipe.put("Calories", "calories");
-        recipe.put("How to Cook?", "recipe");
-
-        // Add a new document with a generated ID
-        db.collection("Recipes")
-                .add(recipe)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+        Map<String, Object> Recipe = new HashMap<>();
+        Recipe.put("Dish", dishh );
+        Recipe.put("Ingredient", ingr );
+        Recipe.put("Cooking Time", cTime);
+        Recipe.put("Calories", cal );
+        Recipe.put("How to Cook?", recip );
 
         // Add a new document with a generated ID
-        db.collection("Recipes")
-                .add(recipe)
-                .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
-                .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+        final Task<DocumentReference> documentReferenceTask = recipeDB.collection("recipes")
+                .add(Recipe)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
     }
 
     //add validation method
@@ -126,13 +138,13 @@ public class Activity_recipe_creation extends AppCompatActivity {
         ingredient.put("Ingredient 4", "beef");
 
         // Add a new document with a generated ID
-        recipeDB.collection("Ingredients")
+        ingredientsDB.collection("Ingredients")
                 .add(ingredient)
                 .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
                 .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
 
         // Add a new document with a generated ID
-        recipeDB.collection("Ingredients")
+        ingredientsDB.collection("Ingredients")
                 .add(ingredient)
                 .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
                 .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
