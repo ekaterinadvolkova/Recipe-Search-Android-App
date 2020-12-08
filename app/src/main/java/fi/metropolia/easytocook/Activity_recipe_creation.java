@@ -1,5 +1,6 @@
 package fi.metropolia.easytocook;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,7 +27,10 @@ public class Activity_recipe_creation extends AppCompatActivity {
     //FirebaseFirestore db = FirebaseFirestore.getInstance();
     public static final String TAG = "recipe";
     public EditText ingredient, cookTime, calories, recipe, dish;
+    Button btnShowList, btnSaveRecipe;
+    ProgressDialog pd;
     FirebaseFirestore recipeDB = FirebaseFirestore.getInstance();
+
 
     //set up UI views
     private void setupUIViews() {
@@ -42,9 +46,22 @@ public class Activity_recipe_creation extends AppCompatActivity {
 
         setContentView(R.layout.activity_recipe_creation);
         super.onCreate(savedInstanceState);
-        //Button btnrecipe = findViewById(R.id.btnSaveRecipe);
+        btnSaveRecipe = findViewById(R.id.btnSaveRecipe);
+        btnShowList = findViewById(R.id.btnSaveRecipe);
 
-        findViewById(R.id.btnSaveRecipe).setOnClickListener(this::onClick);
+        pd = new ProgressDialog(this);
+
+        btnSaveRecipe.setOnClickListener(this::onClick);
+
+        //click button to start list activity
+        btnSaveRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Activity_recipe_creation.this,Activity_search_by_dish.class));
+                finish();
+
+            }
+        });
     }
 
     private void onClick(View v) {
@@ -71,14 +88,17 @@ public class Activity_recipe_creation extends AppCompatActivity {
         // Create a new user with a first and last name
         Map<String, Object> Recipe = new HashMap<>();
         Recipe.put("Dish", dishh );
+        Recipe.put("search", ((String) dishh).toLowerCase() );
         Recipe.put("Ingredient", ingr );
         Recipe.put("Cooking Time", cTime);
         Recipe.put("Calories", cal );
+
         Recipe.put("How to Cook?", recip );
 
         // Add a new document with a generated ID
         final Task<DocumentReference> documentReferenceTask = recipeDB.collection("recipes")
                 .add(Recipe)
+
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {

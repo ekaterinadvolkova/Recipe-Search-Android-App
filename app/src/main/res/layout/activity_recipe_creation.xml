@@ -1,170 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@drawable/profile_background"
+    app:cardCornerRadius="3dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="5dp"
+    app:layout_constraintHeight_default="wrap"
     tools:context=".Activity_recipe_creation">
 
-    <ImageView
-        android:id="@+id/profileInCreation"
-        android:layout_width="0dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="116dp"
-        android:contentDescription="@string/profile_pic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSaveRecipe"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.625"
-        app:srcCompat="@drawable/userimage" />
-
-    <EditText
-        android:id="@+id/ingInput"
-        android:layout_width="294dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="28dp"
-        android:autofillHints=""
-        android:background="@android:color/darker_gray"
-        android:ems="10"
-        android:hint="@string/Ingredient"
-        android:inputType="textPersonName"
-        android:paddingLeft="10sp"
-        android:singleLine="false"
-        android:textColorHighlight="@color/black"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:layout_constraintVertical_bias="0.756" />
-
-    <EditText
-        android:id="@+id/ckTimeInput"
-        android:layout_width="209dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="71dp"
-        android:autofillHints=""
-        android:background="@android:color/darker_gray"
-        android:ems="10"
-        android:hint="@string/cooking_time"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/calorieInput"
-        app:layout_constraintEnd_toEndOf="@+id/ingInput"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="@+id/ingInput"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.0"
-        android:paddingLeft="10sp"/>
-
-    <EditText
-        android:id="@+id/calorieInput"
-        android:layout_width="207dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="52dp"
-        android:autofillHints=""
-        android:background="@android:color/darker_gray"
-        android:ems="10"
-        android:hint="@string/Calories"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintEnd_toEndOf="@+id/ckTimeInput"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="@+id/ckTimeInput"
-        android:paddingLeft="10sp"/>
-
-    <EditText
-        android:id="@+id/howToCookInput"
-        android:layout_width="365dp"
-        android:layout_height="171dp"
-        android:layout_marginBottom="12dp"
-        android:autofillHints=""
-        android:background="@android:color/darker_gray"
-        android:ems="10"
-        android:paddingLeft="10sp"
-        android:hint="@string/how_to_cook"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ingInput"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toStartOf="@+id/calorieInput"
-        app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/dishName"
-        android:layout_width="273dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="12dp"
-        android:autofillHints=""
-        android:background="@android:color/darker_gray"
-        android:ems="10"
-        android:hint="@string/DishName"
-        android:inputType="textPersonName"
-        android:paddingLeft="10sp"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ingInput"
-        app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
-        app:layout_constraintVertical_bias="0.056" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0" />
+        android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        <TextView
+            android:id="@+id/rTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dish"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        <TextView
+            android:id="@+id/ingInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.75" />
+        <TextView
+            android:id="@+id/calorieInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cooking Time"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/btnSaveRecipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginBottom="397dp"
-        android:background="@color/black"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/save_recipe"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/howToCookInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profileInCreation"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/howToCookInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How to Cook?"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout> -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/profile_background"
+        tools:context=".Activity_recipe_creation">
+
+        <EditText
+            android:id="@+id/ingInput"
+            android:layout_width="294dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="28dp"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:ems="10"
+            android:hint="@string/Ingredient"
+            android:inputType="textPersonName"
+            android:paddingLeft="10sp"
+            android:singleLine="false"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8"
+            app:layout_constraintVertical_bias="0.756" />
+
+        <EditText
+            android:id="@+id/ckTimeInput"
+            android:layout_width="209dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="71dp"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:ems="10"
+            android:hint="@string/cooking_time"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/calorieInput"
+            app:layout_constraintEnd_toEndOf="@+id/ingInput"
+            app:layout_constraintHorizontal_bias="0.079"
+            app:layout_constraintStart_toStartOf="@+id/ingInput"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.0"
+            android:paddingLeft="10sp"/>
+
+        <EditText
+            android:id="@+id/calorieInput"
+            android:layout_width="207dp"
+            android:layout_height="39dp"
+            android:layout_marginBottom="52dp"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:ems="10"
+            android:hint="@string/Calories"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintEnd_toEndOf="@+id/ckTimeInput"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="@+id/ckTimeInput"
+            android:paddingLeft="10sp"/>
+
+        <EditText
+            android:id="@+id/howToCookInput"
+            android:layout_width="365dp"
+            android:layout_height="171dp"
+            android:layout_marginBottom="12dp"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:ems="10"
+            android:paddingLeft="10sp"
+            android:hint="@string/how_to_cook"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ingInput"
+            app:layout_constraintHorizontal_bias="0.189"
+            app:layout_constraintStart_toStartOf="@+id/calorieInput"
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/dishName"
+            android:layout_width="273dp"
+            android:layout_height="58dp"
+            android:layout_marginBottom="12dp"
+            android:autofillHints=""
+            android:background="@android:color/darker_gray"
+            android:ems="10"
+            android:hint="@string/DishName"
+            android:inputType="textPersonName"
+            android:paddingLeft="10sp"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ingInput"
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveRecipe"
+            app:layout_constraintVertical_bias="0.056" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <Button
+            android:id="@+id/btnSaveRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="397dp"
+            android:background="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/save_recipe"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/howToCookInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnShowList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:layout_marginBottom="397dp"
+            android:background="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Show List"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/howToCookInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.167"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
